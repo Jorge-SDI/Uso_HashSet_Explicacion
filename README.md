@@ -17,12 +17,6 @@ El programa muestra cómo declarar, manipular, consultar y vaciar un HashSet de 
 >+ Tamaño de la colección (size()): Devuelve el número actual de elementos almacenados.
 >
 >
->+ Eliminación de elementos (remove()): Borra un elemento específico del HashSet.
->
->
->+ Verificación de existencia (contains()): Comprueba si un valor determinado se encuentra dentro del conjunto (true o false).
->
->
 >+ Vaciado del conjunto (clear()): Elimina todos los elementos contenidos en el HashSet.
 >
 >
