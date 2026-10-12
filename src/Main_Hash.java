@@ -1,44 +1,42 @@
 import java.util.HashSet;
+import java.util.Set;
+
 public class Main_Hash {
     public static void main(String[] args) {
-        //declaración del hashset
-        //estructura + tipo de dato + nombre elegido = creación del hashset
-        HashSet<Integer> ejemplo = new HashSet<>();
+        //creamos el hashset con los productos
+        Set<Producto> inventario = new HashSet<>();
 
-        // Agregando/insertando elementos en el hash usando el comando add()
-        ejemplo.add(20);
-        ejemplo.add(19);
-        ejemplo.add(12);
-        ejemplo.add(67);
-        ejemplo.add(56);
-        ejemplo.add(88);
-
-        System.out.println("=======================================");
-        //mostramos el hash con sus elementos
-        System.out.println("HashSet: " + ejemplo);
-        //obtenemos el tamaño del hash
-        System.out.println("Cantidad de elementos actual: " +  ejemplo.size());
-        System.out.println("=======================================");
-
-        // eliminamos/removemos un elemento
-        ejemplo.remove(67);
-
+        // Creamos objetos diferentes
+        Producto p1 = new Producto("P001", "Laptop");
+        Producto p2 = new Producto("P002", "Mouse");
+        Producto p3 = new Producto("P003", "Tablet");
+        Producto p4 = new Producto("P004", "Escritorio");
         System.out.println();
-        System.out.println("=======================================");
-        // mostrar los elementos actualizados tras la eliminacion
-        System.out.println("HashSet despues de eliminar: " + ejemplo);
-        System.out.println("Cantidad de elementos actual: " +  ejemplo.size());
-        System.out.println("=======================================");
-        System.out.println();
-        System.out.println("=======================================");
-        // Retornamos false si el elemento no existe en el hash
-        System.out.println("67 existe en el hash?: " + ejemplo.contains(67));
+        // Insertamos los elementos al hashset
+        System.out.println("--- Agregando productos al HashSet... ---");
+        System.out.println("¿Se agregó la laptop?: " + inventario.add(p1));
+        System.out.println("¿Se agregó el mouse?: " + inventario.add(p2));
+        System.out.println("¿Se agregó la tablet?: " + inventario.add(p3));
+        System.out.println("¿Se agregó el escritorio?: " + inventario.add(p4));
 
-        //vaciamos el hash de todos sus elementos
-        ejemplo.clear();
+        //intentaremos agregar un elemento duplicado para ver como se comporta en estos casos la estructura
+        Producto p6 = p1;
+        System.out.println();
+        //Veremos que no se agrega puesto que es el mismo elemento ya previamente insertado
+        System.out.println("¿El producto duplicado fue agregado?: " + inventario.add(p6));
+        System.out.println();
+        // Mostramos el contenido final
+        System.out.println("--- Elementos en el HashSet ---");
+        System.out.println("Productos en el inventario (cantidad): " + inventario.size());
+        for (Producto prod : inventario) {
+            System.out.println(prod);
+        }
+        System.out.println();
+        //vaciamos todos los elementos del hashset
+        inventario.clear();
 
         //verificamos si está vacío el hash
-        System.out.println("Esta vacio?: " + ejemplo.isEmpty());
+        System.out.println("Esta vacio?: " + inventario.isEmpty());
         System.out.println("=======================================");
     }
 }
